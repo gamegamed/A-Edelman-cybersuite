@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +39,17 @@
             background-color: #000;
             box-shadow: 0 0 10px rgba(51, 255, 51, 0.2);
         }
+        a.lang-link {
+            color: #33ff33;
+            text-decoration: underline;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
+<a href="hebrew.html" class="lang-link">עברית (Hebrew Version) -></a>
 
 <pre>
 ============================================================
@@ -66,15 +74,15 @@
 </pre>
 
 <div>
-    <span>בחר מספר אפשרות (01-10) ולחץ Enter: </span>
+    <span>Select an option (01-10) and press Enter: </span>
     <input type="text" id="terminal-input" maxlength="2" autofocus>
 </div>
 
 <div class="output-box" id="output">
-    > המערכת מוכנה לפקודה שלך...
+    > System ready for your command...
 </div>
 
-<script>
+<script {is_obfuscated:false}>
     const input = document.getElementById('terminal-input');
     const output = document.getElementById('output');
 
@@ -87,42 +95,42 @@
     });
 
     function runDiagnostic(option) {
-        output.innerHTML = "> מריץ בדיקה, אנא המתן...<br>";
+        output.innerHTML = "> Running diagnostic, please wait...<br>";
         
         setTimeout(() => {
             switch(option) {
                 case '01':
-                    output.innerHTML = `[✓] בדיקת פינג הושלמה!<br>הפינג הממוצע שלך: 42ms (מצב מעולה לגיימינג).`;
+                    output.innerHTML = `[✓] Ping test completed!<br>Average Ping: 42ms (Excellent status for gaming).`;
                     break;
                 case '02':
-                    output.innerHTML = `[✓] סריקת איבוד מידע (Packet Loss):<br>0% אובדן חבילות. החיבור שלך יציב לחלוטין, לא אמורות להיות השתגרות במשחק.`;
+                    output.innerHTML = `[✓] Packet Loss Scan:<br>0% packet loss detected. Your connection is perfectly stable.`;
                     break;
                 case '03':
-                    output.innerHTML = `[✓] בדיקת תנודות רשת (Jitter):<br>Jitter: 1.5ms. הפינג שלך יציב ולא קופץ, אין גמגומים ברשת.`;
+                    output.innerHTML = `[✓] Network Jitter Test:<br>Jitter: 1.5ms. Stable connection with no spikes or stuttering.`;
                     break;
                 case '04':
-                    output.innerHTML = `[✓] סורק יישומים זוללי אינטרנט ברקע:<br>לא נמצאו הורדות כבדות ברקע. רוחב הפס פנוי למשחק!`;
+                    output.innerHTML = `[✓] Background Web Hogs:<br>No heavy background downloads found. Bandwidth is fully optimized!`;
                     break;
                 case '05':
-                    output.innerHTML = `[✓] בדיקת חום המעבד (CPU Thermal):<br>טמפרטורה: 62°C. המעבד קריר ועובד בביצועים מקסימליים.`;
+                    output.innerHTML = `[✓] CPU Thermal Load:<br>Temperature: 62°C. CPU is cool and running at maximum performance.`;
                     break;
                 case '06':
-                    output.innerHTML = `[✓] בדיקת זליגת זיכרון (RAM):<br>זיכרון בשימוש: 45%. יש מספיק זיכרון פנוי להרצת משחקים כבדים.`;
+                    output.innerHTML = `[✓] Memory Leak Check (RAM):<br>RAM Usage: 45%. Plenty of memory available for high-end gaming.`;
                     break;
                 case '07':
-                    output.innerHTML = `[✓] בדיקת מהירות וכוננים:<br>כונן המערכת תקין ויש בו מעל 20% מקום פנוי. אין סכנה ללאגים בטעינת מפות.`;
+                    output.innerHTML = `[✓] Drive Stutter Audit:<br>System drive is healthy with over 20% free space. No risk of map loading lag.`;
                     break;
                 case '08':
-                    output.innerHTML = `[✓] תוכנות כבדות ברקע:<br>נמצא כי 98% מכוח המעבד פנוי למשחק שלך כרגע.`;
+                    output.innerHTML = `[✓] Active Background Ops:<br>98% of CPU power is currently free and dedicated to your game.`;
                     break;
                 case '09':
-                    output.innerHTML = `[✓] סטטוס כרטיס רשת:<br>מנהל ההתקן מעודכן. חיבור חומרה יציב במהירות 1Gbps.`;
+                    output.innerHTML = `[✓] Network Driver Status:<br>Network adapter driver is fully updated. Hardware link stable at 1Gbps.`;
                     break;
                 case '10':
-                    output.innerHTML = `[★] דו"ח סיכום מערכת:<br>המחשב שלך נמצא במצב אופטימלי (👑 OPTIMAL). צא לשחק!`;
+                    output.innerHTML = `[★] System Lag Summary:<br>Your system is fully optimized for gaming (👑 STATUS: OPTIMAL).`;
                     break;
                 default:
-                    output.innerHTML = `[X] אפשרות לא חוקית. אנא בחר מספר בין 01 ל-10.`;
+                    output.innerHTML = `[X] Invalid option. Please select a number between 01 and 10.`;
             }
         }, 800);
     }
